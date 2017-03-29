@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="row">
+        <hr><hr>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Human Information</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="form-group">
+                        <div class="col-md-1 control-label">
+                            <label for="user">User</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="user" value="">
+                        </div>
+                        <div class="col-md-2 control-label">
+                            <label for="name">First Name</label>
+                        </div>
+                        <div class="col-md-2">
+                             <input class="form-control" type="text" id="name"name="name" [(ngModel)]="name" />
+                        </div>
+                        <div class="col-md-2 control-label">
+                            <label for="last">Last Name</label>
+                        </div>
+                        <div class="col-md-2">
+                            <input class="form-control" type="text" id="last" value="">
+                        </div>                       
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-1 control-label">
+                            <label for="email">E-mail</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input class="form-control" type="text" id="email" value="">
+                        </div>
+                        <div class="col-md-2 control-label">
+                            <label for="phone">Phone</label>
+                        </div>
+                        <div class="col-md-2">
+                            <input class="form-control" type="text" id="phone" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">                        
+                        <div class="col-md-1 control-label">
+                            <label for="gender">Gender</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input class="form-control" type="number" id="gender" value="">
+                        </div>
+                         <div class="col-md-2 control-label">
+                            <label for="age">Age</label>
+                        </div>
+                        <div class="col-md-2">
+                            <input class="form-control" type="number" name="age" [(ngModel)]="age" />
+                        </div>
+                        <div class="col-md-2 control-label">
+                            <label for="birthday">Birthday</label>
+                        </div>
+                        <div class="col-md-2">
+                            <input class="form-control" type="date" id="birthday" value="">
+                        </div>
+                    </div>
+                    <div>
+                         <br><br>
+                         <button (click)="addHuman()" type="button" class="btn btn-primary">Add a human</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="humans">
+    <li *ngFor="let human of humans">{{human.name}} {{human.age}}
+        <button (click)="removeHuman(human._id)">Delete human</button>
+        <button (click)="viewHuman(human._id)">View human</button>
+    </li>
+</div>
+<div class="specific">
+    {{specificHumanAge}}
+    {{specificHumanName}}
+</div>
